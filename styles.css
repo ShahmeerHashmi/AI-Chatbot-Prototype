@@ -1,0 +1,124 @@
+body {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.chat-container {
+    width: 400px;
+    border: 2px solid #333;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.chat-header {
+    background-color: #1f1f1f;
+    padding: 15px;
+    text-align: center;
+    border-bottom: 2px solid #333;
+    font-size: 1.2em;
+}
+
+.chat-box {
+    flex: 1;
+    background-color: #1a1a1a;
+    padding: 10px;
+    overflow-y: auto;
+    animation: slideIn 0.5s ease-in-out;
+}
+
+.chat-box .message {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.chat-box .message img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.chat-box .message.user {
+    background-color: #333;
+    align-self: flex-end;
+    flex-direction: row-reverse;
+}
+
+.chat-box .message.user img {
+    margin-left: 10px;
+    margin-right: 0;
+}
+
+.chat-box .message.bot {
+    background-color: #555;
+    align-self: flex-start;
+}
+
+.chat-input {
+    display: flex;
+    border-top: 2px solid #333;
+    background-color: #1f1f1f;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 15px;
+    border: none;
+    outline: none;
+    background-color: #1f1f1f;
+    color: #fff;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.chat-input input:focus {
+    background-color: #2a2a2a;
+}
+
+.chat-input button {
+    padding: 15px;
+    background-color: #333;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.chat-input button:hover {
+    background-color: #444;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
